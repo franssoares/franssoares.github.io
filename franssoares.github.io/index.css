@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(23, 0, 32, 0.979), rgb(15, 5, 40));
+    font-family: "Orbitron", sans-serif;
+    
+}
+
+.page {
+    display: grid;
+    grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+    grid-template-columns: 200px 1fr 1fr 1fr 100px 100px;
+    grid-template-rows: 100px 1fr 80px;
+    grid-gap: 2px;
+    padding: 0px;
+    min-height: 100vh;
+    
+}
+
+.page > header { 
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    grid-area: header; 
+    text-align: center;
+    padding: 30px;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: gainsboro;
+    backdrop-filter: blur(30px); 
+    border-radius: 8px;
+}
