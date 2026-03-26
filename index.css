@@ -1,10 +1,13 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     min-height: 100vh;
-    /*background: linear-gradient(to right, #0c0029, #0c0029);*/
     font-family: "Orbitron", sans-serif;
 }
 
+/* Estilizando com Classes */
 .background-page {
     margin: 0;
     min-height: 100vh;
@@ -16,19 +19,20 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    place-items: stretch;
     z-index: 0;
 }
 
 .page {
     display: grid;
     grid-template-areas:
-        "header header header header header header"
-        "menu main main main right right"
-        "menu footer footer footer footer footer";
-    grid-template-columns: 200px 1fr 1fr 1fr 100px 50px;
-    grid-template-rows: 100px 1fr 80px;
-    grid-gap: 2px;
-    padding: 0px;
+        "header header"
+        "menu   menu"
+        "main  main"
+        "footer footer";
+    /* 200px para o menu e 1fr (o resto) para o main */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 50px 1fr 80px;
     min-height: 100vh;
 }
 
@@ -72,29 +76,6 @@ body {
     backdrop-filter: blur(2px);
 }
 
-.page > nav {
-    grid-area: menu;
-    z-index: 2;
-    /*border: 0.2px;
-    border-color: #bbbbbb38;
-    border-style: ridge;
-    /*backdrop-filter: blur(2px);*/
-    padding: 10px;
-    box-sizing: border-box;
-    color: aliceblue;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centraliza os links horizontalmente */
-    align-items: center; /* Centraliza os links verticalmente (opcional) */
-}
-
-.page > nav > a {
-    color: #a1a1a1;
-    font-size: 22px;
-    text-decoration: none;
-    margin: 20px;
-}
-
 /* Isso vai alinhar as chaves e o nome perfeitamente no centro */
 .header-center {
     display: flex;
@@ -119,4 +100,67 @@ body {
         /* Roxo elétrico */ 0 0 10px #b026ff,
         0 0 20px #b026ff,
         0 0 40px #b026ff;
+}
+
+.page > nav {
+    grid-area: menu;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-color: aliceblue;
+}
+
+.page > nav > a {
+    color: #a1a1a1d8;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease; /* Adicione isso para um efeito suave! */
+}
+
+.page nav > a:hover {
+    background-color: #cccccc25;
+    border-radius: 40px;
+}
+
+/* Estilizando pelo ID */
+/* O Main define ONDE o conteúdo vai ficar no tabuleiro */
+main {
+    grid-area: main; /* Ocupa o centro do seu grid */
+    display: flex;
+    flex-direction: column; /* Empilha as seções uma embaixo da outra */
+    gap: 0; /* Controla se haverá espaço entre as seções */
+}
+
+/* A Section define COMO o conteúdo se comporta lá dentro */
+#topo {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente (no eixo column) */
+}
+
+#topo h1 {
+    font-size: 8rem;
+    color: #e0b0ff;
+    text-shadow: 0 0 20px #b026ff;
+    margin-bottom: 20px;
+}
+
+#topo p {
+    z-index: 4;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(240, 248, 255, 0.021);
+    max-width: 800px; /* Largura máxima confortável para leitura */
+    margin-inline: auto;
+    padding: 20px;
+    border: 0.1px solid rgba(240, 248, 255, 0.096);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 50px #af26ff28;
 }
