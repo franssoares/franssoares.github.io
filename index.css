@@ -1,74 +1,122 @@
 body {
     margin: 0;
-    height: 100vh;
-    /*background: linear-gradient(to right, rgba(23, 0, 32, 0.979), rgb(15, 5, 40));*/
+    min-height: 100vh;
+    /*background: linear-gradient(to right, #0c0029, #0c0029);*/
     font-family: "Orbitron", sans-serif;
 }
 
-.background-page{
+.background-page {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
     width: auto;
-    background: rgb(13, 18, 30);
-    background-image: radial-gradient(circle, #22012c, #000000);
+    background: rgb(0, 9, 29);
+    background-image: radial-gradient(circle, #150025, #000000);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
 }
 
 .page {
     display: grid;
     grid-template-areas:
-    'header header header header header header'
-    'menu main main main right right'
-    'menu footer footer footer footer footer';
+        "header header header header header header"
+        "menu main main main right right"
+        "menu footer footer footer footer footer";
     grid-template-columns: 200px 1fr 1fr 1fr 100px 50px;
     grid-template-rows: 100px 1fr 80px;
     grid-gap: 2px;
     padding: 0px;
     min-height: 100vh;
-    
 }
 
-.fa-arrow > i{
+.fa-arrow > i {
     display: flex;
     justify-content: flex-start;
     align-content: center;
-    padding-right: 20px;
-    color:rgb(172, 172, 172);
+    color: rgba(255, 255, 255, 0.877);
     font-size: 30px;
     cursor: pointer;
 }
 
 .github-link i {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.884);
     font-size: 35px;
-    transition: filter 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    transition:
+        filter 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
-.fa-git > i{
-    display:flex;
-    justify-content: flex-end;
-    align-content: center;
-    font-size: 35px;
-    color: rgba(255, 255, 255, 0.736);
-    cursor: pointer;
-}
-
-.page > header { 
-    grid-area: header; 
+.page > header {
+    grid-area: header;
     display: flex;
     z-index: 1;
-    /*border: 0.2px;
-    border-radius: 8px;
-    border-bottom-style: ridge;*/
+    border: 0.2px;
+    border-radius: 1px;
+    border-bottom-style: ridge;
+    border-color: #ffffff17;
     justify-content: space-between;
-    text-align: center;
     align-items: center;
     align-content: center;
     font-optical-sizing: auto;
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-style: normal;
     padding: 30px;
-    background: #110116fe;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #1a003817;
+    backdrop-filter: blur(2px);
+}
+
+.page > nav {
+    grid-area: menu;
+    z-index: 2;
+    /*border: 0.2px;
+    border-color: #bbbbbb38;
+    border-style: ridge;
+    /*backdrop-filter: blur(2px);*/
+    padding: 10px;
+    box-sizing: border-box;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza os links horizontalmente */
+    align-items: center; /* Centraliza os links verticalmente (opcional) */
+}
+
+.page > nav > a {
+    color: #a1a1a1;
+    font-size: 22px;
+    text-decoration: none;
+    margin: 20px;
+}
+
+/* Isso vai alinhar as chaves e o nome perfeitamente no centro */
+.header-center {
+    display: flex;
+    font-weight: 400;
+    align-items: center;
+    gap: 15px; /* É aqui que você controla a distância exata entre as { } e o nome */
+}
+
+.header-center > h3 {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.89);
+    font-size: 25px;
+}
+
+.header-center > p {
+    margin: 0;
     color: rgba(220, 220, 220, 0.808);
-    backdrop-filter: blur(30px); 
+    font-size: 45px;
+    color: #e0b0ff;
+    text-shadow:
+        0 0 5px #b026ff,
+        /* Roxo elétrico */ 0 0 10px #b026ff,
+        0 0 20px #b026ff,
+        0 0 40px #b026ff;
 }
